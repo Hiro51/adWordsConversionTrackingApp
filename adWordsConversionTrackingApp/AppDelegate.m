@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ACTReporter.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Enable automated usage reporting.
+    [ACTAutomatedUsageTracker enableAutomatedUsageReportingWithConversionID:@"910931711"];
+    
+    // Quick Lunch - App Install
+    // Google iOS Download tracking snippet
+    // To track downloads of your app, add this snippet to your
+    // application delegate's application:didFinishLaunchingWithOptions: method.
+    
+    [ACTConversionReporter reportWithConversionID:@"910931711" label:@"lcVoCPmYxVwQ_-2usgM" value:@"1.00" isRepeatable:NO];
+    
     return YES;
 }
 
